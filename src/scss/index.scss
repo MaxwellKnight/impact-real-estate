@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;700&display=swap');
+
+/* ALL VARIABLES */
+:root {
+  --ff-body: 'Noto Sans Hebrew', sans-serif;
+  --fs-body: 16px;
+  --fs-body-mobile: 14px;
+  --fs-heading: 2rem;
+  --fs-subbheading: 1.5rem;
+  --fs-regular: 1rem;
+  --fs-small: .875rem;
+
+
+  --fw-small: 300;
+  --fw-medium: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  --columns: 1fr 1fr;
+
+  --clr-light: #0c74b0;
+  --clr-light-accent: #35A8F7;
+  --clr-dark-accent: #404040;
+  --clr-neutral: #FFFF;
+  --clr-secondary: #868686;
+  --clr-text: #1E1E1E;
+  --clr-text-rgb: 30, 30, 30;
+  --clr-light-rgb: 12, 116, 176;
+  --clr-light-accent-rgb: 53, 168, 247;
+
+  --padding-100: .5em;
+  --padding-200: .875em;
+  --padding-300: 1em;
+  --padding-400: 1.5em;
+  --padding-500: 1.875em;
+  --padding-600: 2em;
+  --padding-700: 2.5em;
+  --padding-800: 3em;
+
+  --margin-100: .5em;
+  --margin-200: .875em;
+  --margin-300: 1em;
+  --margin-400: 1.5em;
+  --margin-500: 1.875em;
+  --margin-600: 2em;
+  --margin-700: 2.5em;
+  --margin-800: 3em;
+
+  --gap: 1em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-text)
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: initial;
+  }
+}
