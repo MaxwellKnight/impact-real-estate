@@ -1,3 +1,5 @@
+@import './index.scss';
+
 /* GENERAL AND [DATA] STYLES */
 /*======================================================================*/
 #root {
@@ -179,6 +181,16 @@ body {
         z-index: -1;
     }
 
+    &::after {
+        @include pseudo-default();
+        top: -50px;
+        background: url('../assets/images/cover-bg.png') no-repeat top;
+        background-size: cover;
+        transform: scaleX(-1);
+        opacity: .1;
+        z-index: -1;
+    }
+
     #{&}__body {
         gap: 0;
         background: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0));
@@ -195,7 +207,10 @@ body {
         position: relative;
         text-align: center;
         padding: var(--padding-300);
-        font-size: var(--fs-regular);
+
+        span {
+            font-weight: var(--fw-bold);
+        }
 
         h1 {
             margin-bottom: var(--margin-200);

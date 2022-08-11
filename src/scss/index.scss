@@ -7,6 +7,7 @@
   --fs-body-mobile: 14px;
   --fs-heading: 2rem;
   --fs-subbheading: 1.5rem;
+  --fs-big: 1.2rem;
   --fs-regular: 1rem;
   --fs-small: .875rem;
 
@@ -58,8 +59,12 @@
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: var(--fs-heading);
   text-align: center;
+}
+
+p {
+  font-size: var(--fs-regular);
 }
 
 a {
