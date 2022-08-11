@@ -28,8 +28,8 @@ body {
 
 /* MIXINS */
 /*========*/
-@mixin transition-ease {
-    transition: all .2s ease-in-out;
+@mixin transition-ease($time) {
+    transition: all #{$time}s ease-in-out;
 }
 
 @mixin pseudo-default {
@@ -39,17 +39,24 @@ body {
     height: 100%;
 }
 
+@mixin box-shadow($color) {
+    box-shadow: 0 1px 5px $color;
+}
+
 @mixin headline-underline {
     position: absolute;
     content: '';
     width: 150px;
     height: 5px;
     right: 50%;
-    top: 30%;
+    top: 25%;
     border-radius: 20px 0 20px 0;
     transform: translateX(50%);
     background: linear-gradient(to right, var(--clr-light), var(--clr-text));
+    @include box-shadow(rgba(var(--clr-text-rgb), .5));
+    z-index: 1;
 }
+
 
 /* NAVIGATION */
 /*======================================================================*/
@@ -83,7 +90,7 @@ body {
             font-weight: var(--fw-medium);
             padding: 0 var(--padding-100);
             transform: scale(1);
-            @include transition-ease();
+            @include transition-ease(.2);
         }
 
         &-item:hover,
@@ -149,7 +156,7 @@ body {
                     top: 0;
                     background-color: rgb(var(--clr-text-rgb), .8);
                     z-index: -1;
-                    @include transition-ease();
+                    @include transition-ease(.2);
                 }
 
                 &:hover::before,
@@ -171,6 +178,7 @@ body {
 .header {
     position: relative;
     margin-top: 50px;
+    overflow: hidden;
 
     &::before {
         @include pseudo-default();
@@ -178,7 +186,7 @@ body {
         background: url('../assets/images/cover-bg.png') no-repeat bottom;
         background-size: cover;
         transform: rotate(180deg);
-        z-index: -1;
+        z-index: -100;
     }
 
     &::after {
@@ -188,7 +196,7 @@ body {
         background-size: cover;
         transform: scaleX(-1);
         opacity: .1;
-        z-index: -1;
+        z-index: -100;
     }
 
     #{&}__body {
@@ -203,22 +211,73 @@ body {
         overflow: hidden;
     }
 
-    &__body> :nth-child(2) {
+    &__body__card {
         position: relative;
         text-align: center;
-        padding: var(--padding-300);
+        padding: var(--padding-500);
+
+        &__heading,
+        &__text {
+            margin-bottom: var(--margin-300);
+        }
+
+        h1::after {
+            @include headline-underline();
+        }
 
         span {
             font-weight: var(--fw-bold);
         }
 
-        h1 {
-            margin-bottom: var(--margin-200);
+        :nth-child(3) button {
+            margin-bottom: var(--margin-700);
+            border: none;
             letter-spacing: 1px;
+            color: var(--clr-neutral);
+            font-weight: var(--fw-bold);
+            font-size: var(--fs-regular);
+            padding: var(--padding-200) var(--padding-700);
+            background: linear-gradient(to bottom, var(--clr-light-accent), var(--clr-light));
+            @include box-shadow(rgba(var(--clr-neutral-rgb), .3));
+            @include transition-ease(.2);
+
+            &:hover,
+            &:focus {
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            &:active {
+                border-radius: 0px;
+                transform: scale(.95);
+            }
         }
 
-        h1::after {
-            @include headline-underline();
+        :nth-child(3) div:last-of-type {
+            display: flex;
+            width: 50%;
+            margin: 0 auto;
+            justify-content: space-around;
+            font-size: var(--fs-big);
+        }
+    }
+}
+
+@media (min-width: 50em) {
+    .header {
+
+        &__body {
+            padding: 0 var(--padding-100);
+        }
+
+        &__body>:nth-child(2) {
+            width: 50%;
+            max-height: 400px;
+            align-self: center;
+            border-radius: 50px;
+            color: var(--clr-text);
+            background-color: rgba(var(--clr-neutral-rgb), .8);
+            @include box-shadow(var(--clr-text))
         }
     }
 }
