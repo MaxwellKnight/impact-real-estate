@@ -13,7 +13,7 @@ const Header: React.FC<{}> = () => {
                 </div>
                 <div className="flex__item" data-type="inverted">
                     <div className="header__body__card">
-                        <h1 className="header__body__card__heading heading">אימפקט</h1>
+                        <h1 className="header__body__card__heading">אימפקט</h1>
                         <p className="header__body__card__text text">משדרנו מתמחה במתן שירותים בהיקף מלא בעולם הנדלן <br /><span>מכירה | רכישה | השכרה | יד ראשונה ועוד ..</span></p>
 
                         <div className="header__body__card__actions">
