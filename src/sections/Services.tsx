@@ -17,8 +17,8 @@ const Services: React.FC = () => {
             <h1 className="services__heading">השירותים שלנו</h1>
             <p className="services__text text">חברתנו מתמחה באיזור הנגב והדרום, אנו דוגלים בדרך עם שיטה ייחודית<br /> הגורמת ללקוחותינו לשוב אלינו והופכת אותם לשגרירים.</p>
 
-            <main className="services__body container--wide">
-                <div className="slider flex">
+            <main className="services__body">
+                <div className="services__body__slider">
                     <Service />
                     <Service />
                     <Service />

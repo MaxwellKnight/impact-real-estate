@@ -1,4 +1,7 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMoneyBill1Wave } from '@fortawesome/free-solid-svg-icons'
+
 
 interface ServiceInterface {
     serviceId: number,
@@ -9,12 +12,16 @@ interface ServiceInterface {
 
 const Service: React.FC = () => {
     return (
-        <div className="service__body__item">
-            <img src="" alt="" className="service__body__icon" />
-            <div className="text-container">
-                <p className="service__body__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores corrupti
-                    dolorem natus tempora, nostrum quo beatae non dolores ab doloribus rem odit minus! Id repellendus voluptatibus
-                    dolore exercitationem aperiam ad!</p>
+        <div className="services__body__slider__item">
+            <div className="services__body__slider__item__container">
+                <header>
+                    <FontAwesomeIcon icon={faMoneyBill1Wave} className="services__body__slider__item__icon" />
+                    <h3 className="serivces__body__slider__item__heading">מכירה והשכרת נכס</h3>
+                </header>
+                <p className="services__body__slider__item__text">
+                    לרכוש דירה זה אחד הרגעים המרגשים ביותר ואנחנו נשמח מאוד ללוות
+                    אתכם באופן מקצועי, יעיל, ממוקד שיעזור לכם לרכוש את דירת החלומות שלכם!
+                </p>
             </div>
         </div>
     )

@@ -21,9 +21,15 @@ const Header: React.FC<{}> = () => {
                                 <button className="btn">דברו איתנו !</button>
                             </div>
                             <div className="flex__item">
-                                <FontAwesomeIcon icon={faTwitter} />
-                                <FontAwesomeIcon icon={faInstagram} />
-                                <FontAwesomeIcon icon={faFacebook} />
+                                <div className="social-icon">
+                                    <FontAwesomeIcon icon={faTwitter} />
+                                </div>
+                                <div className="social-icon">
+                                    <FontAwesomeIcon icon={faInstagram} />
+                                </div>
+                                <div className="social-icon">
+                                    <FontAwesomeIcon icon={faFacebook} />
+                                </div>
                             </div>
                         </div>
 
