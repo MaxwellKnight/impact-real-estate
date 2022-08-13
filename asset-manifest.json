@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/MaxwellKnight/impact-real-estate/static/css/main.8715565d.css",
-    "main.js": "/MaxwellKnight/impact-real-estate/static/js/main.37cf2aa9.js",
+    "main.js": "/MaxwellKnight/impact-real-estate/static/js/main.b3437d3a.js",
     "static/media/agents-01.png": "/MaxwellKnight/impact-real-estate/static/media/agents-01.0168b754dcb2b1c7c8bb.png",
     "static/media/cover-bg.png": "/MaxwellKnight/impact-real-estate/static/media/cover-bg.d8976dea160d81fc9890.png",
     "index.html": "/MaxwellKnight/impact-real-estate/index.html",
     "main.8715565d.css.map": "/MaxwellKnight/impact-real-estate/static/css/main.8715565d.css.map",
-    "main.37cf2aa9.js.map": "/MaxwellKnight/impact-real-estate/static/js/main.37cf2aa9.js.map"
+    "main.b3437d3a.js.map": "/MaxwellKnight/impact-real-estate/static/js/main.b3437d3a.js.map"
   },
   "entrypoints": [
     "static/css/main.8715565d.css",
-    "static/js/main.37cf2aa9.js"
+    "static/js/main.b3437d3a.js"
   ]
 }
