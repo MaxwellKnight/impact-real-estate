@@ -1,18 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Service from '../components/Service'
+import { servicesData } from '../data/services'
 
 interface ServiceInterface {
     serviceId: number,
     serviceHeading: string,
-    serviceIcon: string,
+    serviceIcon: JSX.Element,
     serviceText: string,
-    serviceIsActive: boolean
+    serviceIsActive: boolean,
 }
+
 
 const Services: React.FC = () => {
 
-    const [services, setServices] = useState<ServiceInterface | null>(null)
-    const [activeService, setActiveService] = useState<number>(0)
+    const [services, setServices] = useState<ServiceInterface[]>(servicesData)
+    const [isServiceActive, setIsServiceActive] = useState<number>(0)
+
+    const handleOnClick = (idx: number) => {
+        setIsServiceActive(idx)
+    }
+
+    useEffect(() => {
+        setServices(prevServices => {
+            return prevServices.map(service => {
+                if (service.serviceId === isServiceActive) return { ...service, serviceIsActive: true }
+                return { ...service, serviceIsActive: false }
+            })
+        })
+    }, [isServiceActive])
+
 
     return (
         <section className="services">
@@ -21,10 +37,12 @@ const Services: React.FC = () => {
 
             <main className="services__body">
                 <div className="services__body__slider">
-                    <Service />
-                    <Service />
-                    <Service />
-                    <Service />
+                    {
+                        services ? services.map(service =>
+                            <Service key={service.serviceId} service={service} handleOnClick={handleOnClick} />
+                        ) :
+                            ''
+                    }
                 </div>
 
                 <div className="grid grid--no-gap">
