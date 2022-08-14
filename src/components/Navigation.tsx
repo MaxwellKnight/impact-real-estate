@@ -59,14 +59,3 @@ const Navigation: React.FC = () => {
 }
 
 export default Navigation
-
-/* 
-
-Hi there, thank you for reaching out.
-I visited the link you sent and read about you guys.
-BrightData sounds like a really interesting company, I would like 
-To have the opportunity to sit down and have a more broad conversation.
-
-Best regards, Maxwell.
-
-*/
