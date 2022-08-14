@@ -325,9 +325,9 @@ body {
 /* SERVICES */
 /*======================================================================*/
 .services {
-    text-align: center;
-    width: 100%;
+    max-width: 80em;
     color: var(--clr-text);
+    text-align: center;
 
     &__body {
         width: 100%;
@@ -335,8 +335,8 @@ body {
         #{&}__slider {
             display: grid;
             grid-template-columns: 1fr;
+            place-items: center;
             padding: var(--padding-300);
-            gap: 1em;
             width: 100%;
         }
     }
@@ -362,8 +362,8 @@ body {
         padding: var(--padding-100);
         background-color: var(--clr-light);
         color: var(--clr-neutral);
-        width: 100%;
         cursor: pointer;
+        @include box-shadow(var(--clr-text));
 
 
         &__container {
@@ -371,11 +371,7 @@ body {
             background-color: rgba(0, 0, 0, .1);
         }
 
-        & header {
-            & h3 {
-                font-size: var(--fs-subbheading);
-            }
-        }
+        &__heading {}
 
         &__icon {
             font-size: 5rem;
@@ -393,7 +389,7 @@ body {
     .services {
         &__body {
             #{&}__slider {
-                grid-template-columns: repeat(4, minmax(200px, 1fr));
+                grid-template-columns: repeat(4, 1fr);
             }
         }
     }
@@ -447,6 +443,11 @@ body {
     display: flex;
     flex-direction: row;
     gap: var(--gap);
+}
+
+.active {
+    background-color: var(--clr-text);
+    color: var(--clr-neutral);
 }
 
 @media (min-width: 50em) {

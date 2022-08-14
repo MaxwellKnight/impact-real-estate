@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Service from '../components/Service'
 
 interface ServiceInterface {
     serviceId: number,
-    serviceName: string,
-    serviceDesc: string
-}
-
-interface PropsInterface {
-    services: ServiceInterface[]
+    serviceHeading: string,
+    serviceIcon: string,
+    serviceText: string,
+    serviceIsActive: boolean
 }
 
 const Services: React.FC = () => {
+
+    const [services, setServices] = useState<ServiceInterface | null>(null)
+    const [activeService, setActiveService] = useState<number>(0)
+
     return (
         <section className="services">
             <h1 className="services__heading">השירותים שלנו</h1>
