@@ -25,11 +25,11 @@ const Navigation: React.FC = () => {
         return (
             <div className={classes.div}>
                 <ul className={classes.ul} role="list">
-                    <li className={classes.li} data-type="active"><a href="#">בית</a></li>
-                    <li className={classes.li} ><a href="#">שירותים</a></li>
-                    <li className={classes.li} ><a href="#">למה אנחנו ?</a></li>
-                    <li className={classes.li} ><a href="#">הנבחרת</a></li>
-                    <li className={classes.li} ><a href="#">יצירת קשר</a></li>
+                    <li className={classes.li} data-type="active"><a href="#" onClick={() => setIsListShown(false)}>בית</a></li>
+                    <li className={classes.li} ><a href="#services" onClick={() => setIsListShown(false)}>שירותים</a></li>
+                    <li className={classes.li} ><a href="#" onClick={() => setIsListShown(false)}>למה אנחנו ?</a></li>
+                    <li className={classes.li} ><a href="#" onClick={() => setIsListShown(false)}>הנבחרת</a></li>
+                    <li className={classes.li} ><a href="#" onClick={() => setIsListShown(false)}>יצירת קשר</a></li>
                 </ul>
             </div>
         )
@@ -37,7 +37,7 @@ const Navigation: React.FC = () => {
 
     const handleOnClick = (): void => {
         toggle()
-        hamburger.current?.classList.toggle('brighten')
+        !isListShown ? hamburger.current?.classList.add('brighten') : hamburger.current?.classList.remove('brighten')
     }
 
     return (

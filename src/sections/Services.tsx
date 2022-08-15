@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Service from '../components/Service'
 import { servicesData } from '../data/services'
+import { useWidth } from '../context/WindowWidthContext'
 
 interface ServiceInterface {
     serviceId: number,
@@ -8,30 +9,33 @@ interface ServiceInterface {
     serviceIcon: JSX.Element,
     serviceText: string,
     serviceIsActive: boolean,
+    serviceDropDownHeading: string,
+    serviceDropDownText: string,
+    serviceDropDownImg: string,
 }
 
 
 const Services: React.FC = () => {
 
     const [services, setServices] = useState<ServiceInterface[]>(servicesData)
-    const [isServiceActive, setIsServiceActive] = useState<number>(0)
+    const [activeService, setActiveService] = useState<number>(0)
 
     const handleOnClick = (idx: number) => {
-        setIsServiceActive(idx)
+        setActiveService(idx)
     }
 
     useEffect(() => {
         setServices(prevServices => {
             return prevServices.map(service => {
-                if (service.serviceId === isServiceActive) return { ...service, serviceIsActive: true }
+                if (service.serviceId === activeService) return { ...service, serviceIsActive: true }
                 return { ...service, serviceIsActive: false }
             })
         })
-    }, [isServiceActive])
+    }, [activeService])
 
 
     return (
-        <section className="services">
+        <section className="services" id="services">
             <h1 className="services__heading">השירותים שלנו</h1>
             <p className="services__text text">חברתנו מתמחה באיזור הנגב והדרום, אנו דוגלים בדרך עם שיטה ייחודית<br /> הגורמת ללקוחותינו לשוב אלינו והופכת אותם לשגרירים.</p>
 
@@ -44,20 +48,22 @@ const Services: React.FC = () => {
                             ''
                     }
                 </div>
+                {
+                    !useWidth() ?
+                        <div className="services__body__dropdown grid">
+                            <div className="services__body__dropdown__right">
+                                <h4>{services[activeService].serviceDropDownHeading}</h4>
+                                <p >{services[activeService].serviceDropDownText}</p>
+                                <button>לפרטים</button>
+                            </div>
+                            <div className="services__body__dropdown__left">
+                                <img src={services[activeService].serviceDropDownImg} alt="" />
+                            </div>
+                        </div>
+                        :
+                        ''
+                }
 
-                <div className="grid grid--no-gap">
-                    <div className="grid__item">
-                        <h1 className="services__subheading heading"></h1>
-                        <p className="service__subtext"></p>
-                    </div>
-                    <div className="grid__item">
-                        <img src="" alt="" />
-                    </div>
-                </div>
-
-                <div className="service__attachment__logo">
-                    <img src="" alt="" />
-                </div>
             </main>
         </section>
     )

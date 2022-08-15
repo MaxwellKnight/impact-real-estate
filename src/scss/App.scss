@@ -43,6 +43,31 @@ body {
     box-shadow: 0 1px 5px $color;
 }
 
+@mixin button() {
+    cursor: pointer;
+    margin-bottom: var(--margin-700);
+    border: none;
+    letter-spacing: 1px;
+    color: var(--clr-neutral);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-regular);
+    padding: var(--padding-200) var(--padding-700);
+    background: linear-gradient(to bottom, var(--clr-light-accent), var(--clr-light));
+    @include box-shadow(rgba(var(--clr-neutral-rgb), .3));
+    @include transition-ease(.2);
+
+    &:hover,
+    &:focus {
+        // border-radius: 10px;
+        cursor: pointer;
+    }
+
+    &:active {
+        border-radius: 10px;
+        transform: scale(.95);
+    }
+}
+
 @mixin headline-underline($top: 25%, $width: 5em) {
     position: absolute;
     content: '';
@@ -237,7 +262,7 @@ body {
         }
 
         h1::after {
-            @include headline-underline();
+            @include headline-underline($top: 22%);
         }
 
         span {
@@ -245,27 +270,7 @@ body {
         }
 
         :nth-child(3) button {
-            margin-bottom: var(--margin-700);
-            border: none;
-            letter-spacing: 1px;
-            color: var(--clr-neutral);
-            font-weight: var(--fw-bold);
-            font-size: var(--fs-regular);
-            padding: var(--padding-200) var(--padding-700);
-            background: linear-gradient(to bottom, var(--clr-light-accent), var(--clr-light));
-            @include box-shadow(rgba(var(--clr-neutral-rgb), .3));
-            @include transition-ease(.2);
-
-            &:hover,
-            &:focus {
-                // border-radius: 10px;
-                cursor: pointer;
-            }
-
-            &:active {
-                border-radius: 10px;
-                transform: scale(.95);
-            }
+            @include button();
         }
 
         &__actions> :nth-child(2) {
@@ -273,7 +278,7 @@ body {
             width: 50%;
             margin: 0 auto;
             justify-content: space-around;
-            font-size: var(--fs-heading);
+            font-size: var(--fs-subbheading);
 
             .social-icon {
                 padding: var(--padding-100);
@@ -315,10 +320,6 @@ body {
             // border-radius: 50px;
             @include box-shadow(var(--clr-text))
         }
-
-        &__body__card__actions div:last-of-type {
-            font-size: var(--fs-subbheading);
-        }
     }
 }
 
@@ -331,13 +332,14 @@ body {
 
     &__body {
         width: 100%;
+        padding: var(--padding-300);
 
         #{&}__slider {
             width: 100%;
             display: grid;
             grid-template-columns: 1fr;
             place-items: center;
-            padding: var(--padding-300);
+            // padding: var(--padding-100);
             gap: var(--gap);
         }
     }
@@ -355,7 +357,7 @@ body {
 
     &__text {
         margin: var(--margin-500) 0;
-        font-size: var(--fs-subheading);
+        font-size: var(--fs-regular);
         font-weight: var(--fw-medium);
     }
 
@@ -368,11 +370,13 @@ body {
 
 
         &__container {
-            padding: var(--padding-500);
-            background-color: rgba(0, 0, 0, .1);
+            padding: var(--padding-400);
+            background-color: rgba(0, 0, 0, .3);
         }
 
-        &__heading {}
+        &__heading {
+            font-size: var(--fs-big);
+        }
 
         &__icon {
             font-size: 5rem;
@@ -382,9 +386,92 @@ body {
 
         &__text {
             margin-top: var(--margin-300);
+            font-size: var(--fs-regular);
         }
     }
+
+    &__body__dropdown {
+        position: relative;
+        color: var(--clr-neutral);
+        background-color: var(--clr-text);
+        padding: var(--padding-100);
+        @include box-shadow(var(--clr-text));
+        gap: var(--gap);
+        font-weight: var(--fw-small);
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 0 0 10px 0;
+            background-color: var(--clr-neutral);
+            @include box-shadow(var(--clr-neutral));
+        }
+
+        &__right {
+            align-self: center;
+
+            &>h4 {
+                margin-bottom: var(--margin-300);
+            }
+
+            &>p {
+                font-size: var(--fs-small);
+                max-width: 70%;
+                margin: 0 auto;
+            }
+
+            &>button {
+                @include button();
+                margin-block: var(--margin-300);
+                box-shadow: none;
+            }
+        }
+
+    }
+
+    &__body__dropdown__mobile {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 0 0 10px 0;
+            background-color: var(--clr-neutral);
+            @include box-shadow(var(--clr-neutral));
+        }
+
+        &__right {
+
+            &>button {
+                @include button();
+                margin: var(--margin-300);
+                box-shadow: none;
+            }
+
+            &>h4 {
+                margin: var(--margin-300) 0;
+            }
+
+            &>p {
+                width: 70%;
+                margin: 0 auto;
+                font-size: var(--fs-small);
+                font-weight: var(--fw-small);
+            }
+        }
+
+    }
 }
+
 
 @media (min-width: 50em) {
     .services {
@@ -446,9 +533,11 @@ body {
     gap: var(--gap);
 }
 
+
 .active {
     background-color: var(--clr-text);
     color: var(--clr-neutral);
+    cursor: default;
 }
 
 @media (min-width: 50em) {
