@@ -3,6 +3,8 @@ IMPACT - Real estate agency landing page
 
 Project is ongoing, although you can follow the process :)
 
+Live preview at current stage : https://maxwellknight.github.io/impact-real-estate/
+
   # How to run the app
 
 

@@ -1,7 +1,7 @@
 {
   "name": "yakir-project",
   "version": "0.1.0",
-  "homepage": "https://github.com/MaxwellKnight/impact-real-estate",
+  "homepage": "https://maxwellknight.github.io/impact-real-estate/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",

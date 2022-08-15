@@ -25,14 +25,19 @@ const Navigation: React.FC = () => {
         return (
             <div className={classes.div}>
                 <ul className={classes.ul} role="list">
-                    <li className={classes.li} data-type="active"><a href="#" onClick={() => setIsListShown(false)}>בית</a></li>
-                    <li className={classes.li} ><a href="#services" onClick={() => setIsListShown(false)}>שירותים</a></li>
-                    <li className={classes.li} ><a href="#" onClick={() => setIsListShown(false)}>למה אנחנו ?</a></li>
-                    <li className={classes.li} ><a href="#" onClick={() => setIsListShown(false)}>הנבחרת</a></li>
-                    <li className={classes.li} ><a href="#" onClick={() => setIsListShown(false)}>יצירת קשר</a></li>
+                    <li className={classes.li} data-type="active"><a href="#" onClick={() => handleNavClick()}>בית</a></li>
+                    <li className={classes.li} ><a href="#services" onClick={() => handleNavClick()}>שירותים</a></li>
+                    <li className={classes.li} ><a href="#" onClick={() => handleNavClick()}>למה אנחנו ?</a></li>
+                    <li className={classes.li} ><a href="#" onClick={() => handleNavClick()}>הנבחרת</a></li>
+                    <li className={classes.li} ><a href="#" onClick={() => handleNavClick()}>יצירת קשר</a></li>
                 </ul>
             </div>
         )
+    }
+
+    const handleNavClick = () => {
+        setIsListShown(false)
+        hamburger.current?.classList.remove('brighten')
     }
 
     const handleOnClick = (): void => {
