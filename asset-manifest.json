@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/impact-real-estate/static/css/main.b0d66f64.css",
-    "main.js": "/impact-real-estate/static/js/main.127dcd8c.js",
+    "main.js": "/impact-real-estate/static/js/main.1fb38258.js",
     "static/media/agents-01.png": "/impact-real-estate/static/media/agents-01.0168b754dcb2b1c7c8bb.png",
     "static/media/cover-bg.png": "/impact-real-estate/static/media/cover-bg.d8976dea160d81fc9890.png",
     "index.html": "/impact-real-estate/index.html",
     "main.b0d66f64.css.map": "/impact-real-estate/static/css/main.b0d66f64.css.map",
-    "main.127dcd8c.js.map": "/impact-real-estate/static/js/main.127dcd8c.js.map"
+    "main.1fb38258.js.map": "/impact-real-estate/static/js/main.1fb38258.js.map"
   },
   "entrypoints": [
     "static/css/main.b0d66f64.css",
-    "static/js/main.127dcd8c.js"
+    "static/js/main.1fb38258.js"
   ]
 }
