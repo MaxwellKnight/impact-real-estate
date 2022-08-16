@@ -27,9 +27,9 @@ const Navigation: React.FC = () => {
                 <ul className={classes.ul} role="list">
                     <li className={classes.li} data-type="active"><a href="#" onClick={() => handleNavClick()}>בית</a></li>
                     <li className={classes.li} ><a href="#services" onClick={() => handleNavClick()}>שירותים</a></li>
-                    <li className={classes.li} ><a href="#" onClick={() => handleNavClick()}>למה אנחנו ?</a></li>
-                    <li className={classes.li} ><a href="#" onClick={() => handleNavClick()}>הנבחרת</a></li>
-                    <li className={classes.li} ><a href="#" onClick={() => handleNavClick()}>יצירת קשר</a></li>
+                    <li className={classes.li} ><a href="#reasons" onClick={() => handleNavClick()}>למה אנחנו ?</a></li>
+                    <li className={classes.li} ><a href="#team" onClick={() => handleNavClick()}>הנבחרת</a></li>
+                    <li className={classes.li} ><a href="#contact" onClick={() => handleNavClick()}>יצירת קשר</a></li>
                 </ul>
             </div>
         )
@@ -57,7 +57,7 @@ const Navigation: React.FC = () => {
                 </div>
 
                 {/*print the hamburger icon if the user in mobile*/}
-                {isMobile ? <div ref={hamburger} className="nav__menu" onClick={handleOnClick}></div> : ''}
+                {isMobile ? <div className='nav__hamburger' onClick={handleOnClick}><div ref={hamburger} className="nav__menu"></div></div> : ''}
             </div>
         </nav>
     )

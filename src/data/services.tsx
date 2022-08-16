@@ -5,41 +5,41 @@ import { faMoneyBill1Wave } from '@fortawesome/free-solid-svg-icons'
 const servicesData = [
     {
         serviceId: 0,
-        serviceHeading: "מכירה והשכרת נכס",
+        serviceHeading: "מכירה ורכישת נכס",
         serviceIcon: <FontAwesomeIcon icon={faMoneyBill1Wave} className="services__body__slider__item__icon" />,
         serviceText: `לרכוש דירה זה אחד הרגעים המרגשים ביותר ואנחנו נשמח מאוד ללוות .אתכם באופן מקצועי, יעיל, ממוקד שיעזור לכם לרכוש את דירת החלומות שלכם!!`,
         serviceIsActive: true,
-        serviceDropDownHeading: "דף 1",
+        serviceDropDownHeading: "מכירה ורכישת נכס",
         serviceDropDownText: "טקסט 1",
         serviceDropDownImg: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2196&q=80"
     },
     {
         serviceId: 1,
-        serviceHeading: "מכירה והשכרת נכס",
+        serviceHeading: "שיפוץ והשבחת נכסים",
         serviceIcon: <FontAwesomeIcon icon={faMoneyBill1Wave} className="services__body__slider__item__icon" />,
         serviceText: `לרכוש דירה זה אחד הרגעים המרגשים ביותר ואנחנו נשמח מאוד ללוות .אתכם באופן מקצועי, יעיל, ממוקד שיעזור לכם לרכוש את דירת החלומות שלכם!!`,
         serviceIsActive: false,
-        serviceDropDownHeading: "דף 2",
+        serviceDropDownHeading: "שיפוץ והשבחת נכסים",
         serviceDropDownText: "טקסט 2",
         serviceDropDownImg: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2196&q=80"
     },
     {
         serviceId: 2,
-        serviceHeading: "מכירה והשכרת נכס",
+        serviceHeading: "השכרה וניהול נכסים",
         serviceIcon: <FontAwesomeIcon icon={faMoneyBill1Wave} className="services__body__slider__item__icon" />,
         serviceText: `לרכוש דירה זה אחד הרגעים המרגשים ביותר ואנחנו נשמח מאוד ללוות .אתכם באופן מקצועי, יעיל, ממוקד שיעזור לכם לרכוש את דירת החלומות שלכם!!`,
         serviceIsActive: false,
-        serviceDropDownHeading: "דף 3",
+        serviceDropDownHeading: "השכרה וניהול נכסים",
         serviceDropDownText: "טקסט 3",
         serviceDropDownImg: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2196&q=80"
     },
     {
         serviceId: 3,
-        serviceHeading: "מכירה והשכרת נכס",
+        serviceHeading: "בדיקת שוכרים  ועוד",
         serviceIcon: <FontAwesomeIcon icon={faMoneyBill1Wave} className="services__body__slider__item__icon" />,
         serviceText: `לרכוש דירה זה אחד הרגעים המרגשים ביותר ואנחנו נשמח מאוד ללוות .אתכם באופן מקצועי, יעיל, ממוקד שיעזור לכם לרכוש את דירת החלומות שלכם!!`,
         serviceIsActive: false,
-        serviceDropDownHeading: "דף 4",
+        serviceDropDownHeading: "בדיקת שוכרים",
         serviceDropDownText: "טקסט 4",
         serviceDropDownImg: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2196&q=8"
     }

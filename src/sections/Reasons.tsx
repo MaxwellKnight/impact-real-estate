@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import React from 'react'
 import Reason from '../components/Reason'
 
@@ -14,13 +15,15 @@ interface PropsInterface {
 
 const Reasons: React.FC = () => {
     return (
-        <section className="reasons container">
-            <h1 className="reasons__heading heading">סיבות</h1>
-            <h3 className="reasons__subheading"></h3>
-            <div className="grid reasons__container">
+        <section className="reasons" id="reasons">
+            <h1>הבחירה בידיים שלך</h1>
+            <h3>ולמה כדאי לבחור בנו...</h3>
+            <div className="reasons__container">
                 <Reason />
-                <Reason />
-                <Reason />
+                <div className='reasons__container__up'>
+                    <Reason />
+                    <Reason />
+                </div>
                 <Reason />
             </div>
         </section>

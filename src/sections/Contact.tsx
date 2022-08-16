@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
     }
 
     return (
-        <section className="contact container">
+        <section id="contact" className="contact container">
             <h1 className="contact__heading heading inverted">יצירת קשר</h1>
             <div className="contact__card">
                 <form className="contact__card-form">

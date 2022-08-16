@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Service from '../components/Service'
 import { servicesData } from '../data/services'
 import { useWidth } from '../context/WindowWidthContext'
+import { motion } from 'framer-motion'
 
 interface ServiceInterface {
     serviceId: number,
@@ -49,19 +50,17 @@ const Services: React.FC = () => {
                     }
                 </div>
                 {
-                    !useWidth() ?
-                        <div className="services__body__dropdown grid">
-                            <div className="services__body__dropdown__right">
-                                <h4>{services[activeService].serviceDropDownHeading}</h4>
-                                <p >{services[activeService].serviceDropDownText}</p>
-                                <button>לפרטים</button>
-                            </div>
-                            <div className="services__body__dropdown__left">
-                                <img src={services[activeService].serviceDropDownImg} alt="" />
-                            </div>
+                    !useWidth() &&
+                    <div className="services__body__dropdown grid">
+                        <div className="services__body__dropdown__right">
+                            <h4>{services[activeService].serviceDropDownHeading}</h4>
+                            <p >{services[activeService].serviceDropDownText}</p>
+                            <button>לפרטים</button>
                         </div>
-                        :
-                        ''
+                        <div className="services__body__dropdown__left">
+                            <img src={services[activeService].serviceDropDownImg} alt="" />
+                        </div>
+                    </div>
                 }
 
             </main>
