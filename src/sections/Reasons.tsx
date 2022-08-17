@@ -1,16 +1,11 @@
-import { motion } from 'framer-motion'
 import React from 'react'
 import Reason from '../components/Reason'
 
 interface ReasonInterface {
     reasonId: number,
     reasoneHeading: string,
-    reasonImg: string,
+    reasonLogo: string,
     reasonText: string
-}
-
-interface PropsInterface {
-    reasons: ReasonInterface[]
 }
 
 const Reasons: React.FC = () => {

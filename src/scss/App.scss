@@ -500,24 +500,23 @@ body {
 
     &__container {
         max-width: 100em;
-        margin: 0 auto;
+        margin: 0 auto var(--margin-800) auto;
         margin-block-start: var(--margin-800);
     }
 
     &__item {
         display: grid;
         height: fit-content;
-        max-width: 400px;
         grid-template-columns: 3fr 1fr;
         place-items: center;
         color: var(--clr-neutral);
         background-color: #0C74B0;
         background-blend-mode: luminosity;
         padding-top: var(--padding-300);
-        margin: 0 auto;
+        // margin: 0 auto;
         margin-bottom: 1em;
         border-radius: .5rem;
-        border-top: 5px solid orange;
+        border-top: 5px solid var(--clr-glow);
         gap: var(--gap);
         box-shadow: rgba(17, 12, 46, 0.3) 0px 48px 100px 0px;
 
@@ -539,6 +538,8 @@ body {
             letter-spacing: 1px;
             padding: var(--padding-500) var(--padding-800);
             border-top: 1px solid var(--clr-dark-accent);
+            font-size: var(--fs-small);
+            line-height: 1.6;
         }
 
         &__logo {
@@ -558,6 +559,11 @@ body {
             &__up>div:last-child {
                 margin-top: var(--margin-800);
             }
+        }
+
+        &__item {
+            max-width: 400px;
+            margin: 0 auto;
         }
     }
 }

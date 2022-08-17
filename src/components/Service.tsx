@@ -43,7 +43,7 @@ const Service: React.FC<ServiceInterface> = ({ service, handleOnClick }) => {
                 <motion.div
                     layout
                     animate={{ opacity: 1 }}
-                    transition={{ layout: { duration: .5, type: "spring" } }}
+                    transition={{ type: 'spring', duration: .5 }}
                     initial={{ opacity: 0 }}
                 >
                     <div className="services__body__dropdown__mobile flex">
@@ -57,7 +57,7 @@ const Service: React.FC<ServiceInterface> = ({ service, handleOnClick }) => {
                             <motion.img layout
                                 animate={{ opacity: 1 }}
                                 initial={{ opacity: 0 }}
-                                transition={{ delay: .3 }}
+                                transition={{ delay: .2 }}
                                 src={serviceDropDownImg}
                                 alt=""
                             />
