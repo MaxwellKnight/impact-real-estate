@@ -10,6 +10,7 @@
   --fs-big: 1.2rem;
   --fs-regular: 1rem;
   --fs-small: .875rem;
+  --fs-xs: .75rem;
 
 
   --fw-small: 300;
@@ -30,26 +31,21 @@
   --clr-light-rgb: 12, 116, 176;
   --clr-light-accent-rgb: 53, 168, 247;
 
-  --padding-100: .5em;
-  --padding-200: .875em;
-  --padding-300: 1em;
-  --padding-400: 1.5em;
-  --padding-500: 1.875em;
-  --padding-600: 2em;
-  --padding-700: 2.5em;
-  --padding-800: 3em;
-
-  --margin-100: .5em;
-  --margin-200: .875em;
-  --margin-300: 1em;
-  --margin-400: 1.5em;
-  --margin-500: 1.875em;
-  --margin-600: 2em;
-  --margin-700: 2.5em;
-  --margin-800: 3em;
+  --size-100: .5em;
+  --size-200: .875em;
+  --size-300: 1em;
+  --size-400: 1.5em;
+  --size-500: 1.875em;
+  --size-600: 2em;
+  --size-700: 2.5em;
+  --size-800: 3em;
+  --size-900: 5em;
+  --size-1000: 10em;
 
   --gap: 1em;
   --gap-big: 2em;
+
+  --center: 0 auto;
 }
 
 *,

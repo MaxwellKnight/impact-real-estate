@@ -4,7 +4,7 @@
 /*======================================================================*/
 #root {
     width: 100%;
-    margin: 0 auto;
+    margin: var(--center);
     display: grid;
     place-items: center;
 }
@@ -45,13 +45,13 @@ body {
 
 @mixin button() {
     cursor: pointer;
-    margin-bottom: var(--margin-700);
+    margin-bottom: var(--size-700);
     border: none;
     letter-spacing: 1px;
     color: var(--clr-neutral);
     font-weight: var(--fw-bold);
     font-size: var(--fs-regular);
-    padding: var(--padding-200) var(--padding-700);
+    padding: var(--size-200) var(--size-700);
     background: linear-gradient(to bottom, var(--clr-light-accent), var(--clr-light));
     transform: scale(1);
     @include box-shadow(rgba(var(--clr-neutral-rgb), .3));
@@ -116,7 +116,7 @@ body {
     &__hamburger {
         position: relative;
         z-index: 10000;
-        padding: var(--padding-300);
+        padding: var(--size-300);
     }
 
     &__hamburger:hover,
@@ -126,7 +126,7 @@ body {
 
     &__wrapper {
         width: 90%;
-        margin: 0 auto;
+        margin: var(--center);
         display: flex;
         align-items: center;
         flex-direction: row-reverse;
@@ -140,7 +140,7 @@ body {
         &-item {
             position: relative;
             font-weight: var(--fw-medium);
-            padding: 0 var(--padding-100);
+            padding: 0 var(--size-100);
             transform: scale(1);
             @include transition-ease(.2);
         }
@@ -200,7 +200,7 @@ body {
 
             &-item {
                 position: relative;
-                padding: var(--padding-300) 0;
+                padding: var(--size-300) 0;
 
                 &::before {
                     @include pseudo-default();
@@ -256,25 +256,25 @@ body {
     #{&}__body {
         gap: 0;
         max-width: 70em;
-        margin: 0 auto;
+        margin: var(--center);
     }
 
     &__body> :nth-child(1) {
         width: 50%;
         border-radius: 50%;
-        margin: 0 auto -30px auto;
+        margin: var(--center) -30px auto;
         overflow: hidden;
     }
 
     &__body__card {
         position: relative;
         text-align: center;
-        padding: var(--padding-500);
+        padding: var(--size-500);
         @include attachment();
 
         &__heading,
         &__text {
-            margin-bottom: var(--margin-300);
+            margin-bottom: var(--size-300);
         }
 
         h1::after {
@@ -292,12 +292,12 @@ body {
         &__actions> :nth-child(2) {
             display: flex;
             width: 50%;
-            margin: 0 auto;
+            margin: var(--center);
             justify-content: space-around;
             font-size: var(--fs-subbheading);
 
             .social-icon {
-                padding: var(--padding-100);
+                padding: var(--size-100);
                 cursor: pointer;
 
                 svg {
@@ -326,7 +326,7 @@ body {
         }
 
         &__body {
-            padding: 0 var(--padding-100);
+            padding: 0 var(--size-100);
         }
 
         &__body>:nth-child(2) {
@@ -351,14 +351,14 @@ body {
 
     &__body {
         width: 100%;
-        padding: var(--padding-300);
+        padding: var(--size-300);
 
         #{&}__slider {
             width: 100%;
             display: grid;
             grid-template-columns: 1fr;
             place-items: center;
-            // padding: var(--padding-100);
+            // padding: var(--size-100);
             gap: var(--gap);
         }
     }
@@ -366,7 +366,7 @@ body {
 
     &__heading {
         position: relative;
-        margin-top: var(--margin-300);
+        margin-top: var(--size-300);
 
         &::after {
             @include headline-underline(100%, 8em);
@@ -375,13 +375,13 @@ body {
     }
 
     &__text {
-        margin: var(--margin-500) 0;
+        margin: var(--size-500) 0;
         font-size: var(--fs-regular);
         font-weight: var(--fw-medium);
     }
 
     &__body__slider__item {
-        padding: var(--padding-100);
+        padding: var(--size-100);
         background-color: var(--clr-light);
         color: var(--clr-neutral);
         cursor: pointer;
@@ -389,7 +389,7 @@ body {
 
 
         &__container {
-            padding: var(--padding-400);
+            padding: var(--size-400);
             background-color: rgba(0, 0, 0, .3);
         }
 
@@ -404,7 +404,7 @@ body {
 
 
         &__text {
-            margin-top: var(--margin-300);
+            margin-top: var(--size-300);
             font-size: var(--fs-small);
         }
     }
@@ -413,7 +413,7 @@ body {
         position: relative;
         color: var(--clr-neutral);
         background-color: var(--clr-text);
-        padding: var(--padding-100);
+        padding: var(--size-100);
         @include box-shadow(var(--clr-text));
         gap: var(--gap);
         font-weight: var(--fw-small);
@@ -423,19 +423,19 @@ body {
             align-self: center;
 
             &>h4 {
-                margin-bottom: var(--margin-300);
+                margin-bottom: var(--size-300);
                 font-size: var(--fs-small);
             }
 
             &>p {
                 font-size: var(--fs-small);
                 max-width: 70%;
-                margin: 0 auto;
+                margin: var(--center);
             }
 
             &>button {
                 @include button();
-                margin-block: var(--margin-300);
+                margin-block: var(--size-300);
                 box-shadow: none;
             }
         }
@@ -450,17 +450,17 @@ body {
 
             &>button {
                 @include button();
-                margin: var(--margin-300);
+                margin: var(--size-300);
                 box-shadow: none;
             }
 
             &>h4 {
-                margin: var(--margin-300) 0;
+                margin: var(--size-300) 0;
             }
 
             &>p {
                 width: 70%;
-                margin: 0 auto;
+                margin: var(--center);
                 font-size: var(--fs-small);
                 font-weight: var(--fw-small);
             }
@@ -484,14 +484,30 @@ body {
 /*======================================================================*/
 .reasons {
     width: 100%;
-    background-color: var(--clr-light-accent);
+    position: relative;
+    z-index: -1;
+    background-color: var(--clr-light);
     color: var(--clr-neutral);
     text-align: center;
-    padding: 0 var(--padding-300);
+    padding: var(--size-500) var(--size-300) var(--size-1000);
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 1000;
+        height: 0;
+        width: 0;
+        left: 50%;
+        top: 99%;
+        transform: translateX(-50%);
+        border: 300px solid transparent;
+        border-bottom: 0;
+        border-top: 5em solid var(--clr-light);
+    }
 
     &>h1 {
         position: relative;
-        margin: var(--margin-800) 0 var(--margin-100);
+        margin: var(--size-800) 0 var(--size-100);
 
         &::after {
             @include headline-underline(100%, 300px)
@@ -500,8 +516,8 @@ body {
 
     &__container {
         max-width: 100em;
-        margin: 0 auto var(--margin-800) auto;
-        margin-block-start: var(--margin-800);
+        margin: var(--center) var(--size-800) auto;
+        margin-block-start: var(--size-800);
     }
 
     &__item {
@@ -512,10 +528,9 @@ body {
         color: var(--clr-neutral);
         background-color: #0C74B0;
         background-blend-mode: luminosity;
-        padding-top: var(--padding-300);
-        // margin: 0 auto;
-        margin-bottom: 1em;
-        border-radius: .5rem;
+        padding-top: var(--size-300);
+        margin-bottom: var(--size-300);
+        border-radius: var(--size-100);
         border-top: 5px solid var(--clr-glow);
         gap: var(--gap);
         box-shadow: rgba(17, 12, 46, 0.3) 0px 48px 100px 0px;
@@ -523,7 +538,7 @@ body {
         &__heading {
             position: relative;
             font-size: var(--fs-subbheading);
-            margin: var(--margin-100) 0;
+            margin: var(--size-100) 0;
 
             &::after {
                 grid-column: 1 / -1;
@@ -536,7 +551,7 @@ body {
             grid-column: 1 / -1;
             font-weight: var(--fw-small);
             letter-spacing: 1px;
-            padding: var(--padding-500) var(--padding-800);
+            padding: var(--size-500) var(--size-800);
             border-top: 1px solid var(--clr-dark-accent);
             font-size: var(--fs-small);
             line-height: 1.6;
@@ -548,8 +563,9 @@ body {
     }
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
     .reasons {
+
         &__container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -557,13 +573,76 @@ body {
             column-gap: 1em;
 
             &__up>div:last-child {
-                margin-top: var(--margin-800);
+                margin-top: var(--size-800);
             }
         }
 
         &__item {
             max-width: 400px;
-            margin: 0 auto;
+            margin: var(--center);
+        }
+    }
+}
+
+/* TEAM SECTION */
+/*======================================================================*/
+.team {
+    width: 100%;
+    position: relative;
+    z-index: -100;
+    background-color: var(--clr-text);
+    padding: var(--size-300);
+
+    &__heading {
+        color: var(--clr-neutral);
+        margin: var(--size-800) 0;
+        position: relative;
+
+        &::after {
+            @include headline-underline(100%, 150px);
+        }
+    }
+
+    &__card {
+        display: grid;
+        grid-template-areas:
+            "img title"
+            "img desc";
+        place-items: center;
+        width: 100%;
+        color: var(--clr-neutral);
+        text-align: center;
+        padding: var(--size-100);
+        background-color: rgb(var(--clr-text-rgb), .8);
+        box-shadow: rgba(var(--clr-light-rgb), .1) 0px 48px 100px 0px;
+
+        &__img-container {
+            grid-area: img;
+            width: 8em;
+            padding: 1em;
+            margin: var(--center);
+            border-radius: 50%;
+            overflow: hidden;
+
+            &>img {
+                border-radius: 50%;
+            }
+        }
+
+        &__agent-title {
+            grid-area: title;
+            font-size: var(--fs-regular);
+            align-self: end;
+        }
+
+        &__agent-desc {
+            grid-area: desc;
+            font-size: var(--fs-xs);
+            padding: var(--size-100);
+            align-self: start;
+            max-width: 300px;
+            margin: var(--center);
+            opacity: .7;
         }
     }
 }
@@ -572,7 +651,7 @@ body {
 /*======================================================================*/
 .container,
 .container--wide {
-    margin: 0 auto;
+    margin: var(--center);
     max-width: 80em;
 }
 

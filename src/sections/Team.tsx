@@ -15,8 +15,8 @@ interface PropsInterface {
 const Team: React.FC = () => {
 
     return (
-        <section className="team container--wide" id="team" data-type="inverted">
-            <h1 className="team__heading heading inverted">הנבחרת</h1>
+        <section className="team" id="team">
+            <h1 className="team__heading heading">הנבחרת</h1>
             <div className="team__cards-container flex">
                 <AgentCard />
                 <AgentCard />

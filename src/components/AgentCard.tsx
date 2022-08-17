@@ -1,4 +1,5 @@
 import React from 'react'
+const profile = require('../assets/images/profile-01.png')
 
 interface AgentInterface {
     firstName: string,
@@ -10,11 +11,12 @@ interface AgentInterface {
 const AgentCard: React.FC = () => {
     return (
         <div className="team__card">
-            <div className="card__img-container">
-                <img src="" alt="Agents image" />
+            <div className="team__card__img-container">
+                <img src={profile} alt="Agents image" />
             </div>
-            <h4 className="card__agent-name"></h4>
-            <p className="card__agent-desc"></p>
+            <h2 className="team__card__agent-title">מייסד</h2>
+            <p className="team__card__agent-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quod a doloribus illo perferendis deserunt itaque</p>
         </div>
     )
 }
