@@ -17,7 +17,7 @@ const Team: React.FC = () => {
     return (
         <section className="team" id="team">
             <h1 className="team__heading heading">הנבחרת</h1>
-            <div className="team__cards-container flex">
+            <div className="team__cards-container">
                 <AgentCard />
                 <AgentCard />
                 <AgentCard />

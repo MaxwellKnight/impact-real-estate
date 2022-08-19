@@ -1,5 +1,8 @@
 import React, { useState, useRef } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useWidth } from '../context/WindowWidthContext'
+
+import NavLink from './NavList'
 
 interface ClassesInterface {
     div: string,
@@ -12,46 +15,32 @@ const Navigation: React.FC = () => {
     const hamburger = useRef<HTMLDivElement>(null)
     const isMobile: boolean | null = useWidth()
 
-    const toggle = (): void => {
-        setIsListShown(prevIsShown => !prevIsShown)
-    }
-
-    const printList = (): JSX.Element => {
-        const classes: ClassesInterface = {
-            div: isMobile || isListShown ? 'mobile-nav' : 'container flex-row',
-            ul: isMobile || isListShown ? 'mobile-nav__list' : 'nav__list flex-row',
-            li: isMobile || isListShown ? 'mobile-nav__list-item' : 'nav__list-item'
-        }
-        return (
-            <div className={classes.div}>
-                <ul className={classes.ul} role="list">
-                    <li className={classes.li} data-type="active"><a href="#" onClick={() => handleNavClick()}>בית</a></li>
-                    <li className={classes.li} ><a href="#services" onClick={() => handleNavClick()}>שירותים</a></li>
-                    <li className={classes.li} ><a href="#reasons" onClick={() => handleNavClick()}>למה אנחנו ?</a></li>
-                    <li className={classes.li} ><a href="#team" onClick={() => handleNavClick()}>הנבחרת</a></li>
-                    <li className={classes.li} ><a href="#contact" onClick={() => handleNavClick()}>יצירת קשר</a></li>
-                </ul>
-            </div>
-        )
+    const classes: ClassesInterface = {
+        div: isMobile || isListShown ? 'mobile-nav' : 'container flex-row',
+        ul: isMobile || isListShown ? 'mobile-nav__list' : 'nav__list flex-row',
+        li: isMobile || isListShown ? 'mobile-nav__list-item' : 'nav__list-item'
     }
 
     const handleNavClick = () => {
         setIsListShown(false)
         hamburger.current?.classList.remove('brighten')
+        hamburger.current?.classList.toggle('clicked')
     }
 
     const handleOnClick = (): void => {
-        toggle()
+        setIsListShown(prevIsShown => !prevIsShown)
         !isListShown ? hamburger.current?.classList.add('brighten') : hamburger.current?.classList.remove('brighten')
+        hamburger.current?.classList.toggle('clicked')
     }
 
     return (
         <nav className="nav">
 
             <div className="nav__wrapper">
-                {/*printing the nav list if the user is on desktop*/}
-                {!isMobile || isListShown ? printList() : ''}
-
+                <AnimatePresence>
+                    {/*printing the nav list if the user is on desktop*/}
+                    {!isMobile || isListShown ? <NavLink classes={classes} handleNavClick={handleNavClick} /> : ''}
+                </AnimatePresence>
                 <div className="nav__logo">
                     <span className="nav__logo-icon">Impact</span>
                 </div>

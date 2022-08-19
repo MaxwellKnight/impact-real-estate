@@ -14,7 +14,7 @@ interface ReasonInterface {
 
 const Reason: React.FC = () => {
 
-    const { ref, inView } = useInView({ threshold: .5 })
+    const { ref, inView } = useInView({ threshold: .2 })
     const animation = useAnimation()
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const Reason: React.FC = () => {
         <motion.div
             ref={ref}
             animate={animation}
-            transition={{ type: 'spring', duration: 1, bounce: .5 }}
+            transition={{ type: 'spring', duration: .5, bounce: .2 }}
             className="reasons__item"
         >
             <h4 className="reasons__item__heading">זמינות 24/7</h4>
