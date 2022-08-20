@@ -34,9 +34,15 @@ const Navigation: React.FC = () => {
     }
 
     return (
-        <nav className="nav">
+        <motion.nav className="nav" >
 
-            <div className="nav__wrapper">
+            <motion.div
+                layout
+                initial={{ y: isMobile ? '-100%' : 0, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: 'spring', duration: 2, bounce: .3, delay: 2 }}
+                className="nav__wrapper"
+            >
                 <AnimatePresence>
                     {/*printing the nav list if the user is on desktop*/}
                     {!isMobile || isListShown ? <NavLink classes={classes} handleNavClick={handleNavClick} /> : ''}
@@ -47,8 +53,8 @@ const Navigation: React.FC = () => {
 
                 {/*print the hamburger icon if the user in mobile*/}
                 {isMobile ? <div className='nav__hamburger' onClick={handleOnClick}><div ref={hamburger} className="nav__menu"></div></div> : ''}
-            </div>
-        </nav>
+            </motion.div>
+        </motion.nav>
     )
 }
 

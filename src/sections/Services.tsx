@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Service from '../components/Service'
+import ServiceExpanded from '../components/ServicesExpanded'
 import { servicesData } from '../data/services'
 import { useWidth } from '../context/WindowWidthContext'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 interface ServiceInterface {
     serviceId: number,
@@ -36,35 +37,32 @@ const Services: React.FC = () => {
 
 
     return (
-        <section className="services" id="services">
+        <motion.section
+
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2, delay: 1 }}
+            className="services" id="services"
+        >
             <h1 className="services__heading">השירותים שלנו</h1>
             <p className="services__text text">חברתנו מתמחה באיזור הנגב והדרום, אנו דוגלים בדרך עם שיטה ייחודית<br /> הגורמת ללקוחותינו לשוב אלינו והופכת אותם לשגרירים.</p>
 
-            <main className="services__body">
-                <div className="services__body__slider">
+            <motion.main className="services__body">
+                <motion.div className="services__body__slider">
                     {
                         services ? services.map(service =>
                             <Service key={service.serviceId} service={service} handleOnClick={handleOnClick} />
                         ) :
                             ''
                     }
-                </div>
+                </motion.div>
                 {
                     !useWidth() &&
-                    <div className="services__body__dropdown grid">
-                        <div className="services__body__dropdown__right">
-                            <h4>{services[activeService].serviceDropDownHeading}</h4>
-                            <p >{services[activeService].serviceDropDownText}</p>
-                            <button>לפרטים</button>
-                        </div>
-                        <div className="services__body__dropdown__left">
-                            <img src={services[activeService].serviceDropDownImg} alt="" />
-                        </div>
-                    </div>
+                    <ServiceExpanded service={services[activeService]} />
                 }
 
-            </main>
-        </section>
+            </motion.main>
+        </motion.section>
     )
 }
 

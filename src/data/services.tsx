@@ -11,7 +11,7 @@ const servicesData = [
         serviceIsActive: true,
         serviceDropDownHeading: "מכירה ורכישת נכס",
         serviceDropDownText: "טקסט 1",
-        serviceDropDownImg: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2196&q=80"
+        serviceDropDownImg: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     },
     {
         serviceId: 1,
@@ -31,7 +31,7 @@ const servicesData = [
         serviceIsActive: false,
         serviceDropDownHeading: "השכרה וניהול נכסים",
         serviceDropDownText: "טקסט 3",
-        serviceDropDownImg: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2196&q=80"
+        serviceDropDownImg: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
     },
     {
         serviceId: 3,
@@ -41,7 +41,7 @@ const servicesData = [
         serviceIsActive: false,
         serviceDropDownHeading: "בדיקת שוכרים",
         serviceDropDownText: "טקסט 4",
-        serviceDropDownImg: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2196&q=8"
+        serviceDropDownImg: "https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     }
 ]
 
