@@ -1,23 +1,9 @@
 import React from 'react'
 import { useWidth } from '../context/WindowWidthContext'
 import { motion } from 'framer-motion'
+import { ServiceProps } from '../utils/interfaces'
 
-
-interface ServiceInterface {
-    service: {
-        serviceId: number,
-        serviceHeading: string,
-        serviceIcon: JSX.Element,
-        serviceText: string,
-        serviceIsActive: boolean,
-        serviceDropDownHeading: string,
-        serviceDropDownText: string,
-        serviceDropDownImg: string,
-    }
-    handleOnClick: (idx: number) => void
-}
-
-const Service: React.FC<ServiceInterface> = ({ service, handleOnClick }) => {
+const Service: React.FC<ServiceProps> = ({ service, handleOnClick }) => {
     const isMobile: boolean | null = useWidth()
     const {
         serviceId,

@@ -4,9 +4,11 @@
 /*======================================================================*/
 #root {
     width: 100%;
+    position: relative;
     margin: var(--center);
     display: grid;
     place-items: center;
+    isolation: isolate;
 }
 
 body {
@@ -93,7 +95,7 @@ body {
     border-radius: 20px 0 20px 0;
     transform: translateX(50%);
     background: linear-gradient(to right, var(--clr-light), var(--clr-text));
-    @include box-shadow(rgba(var(--clr-text-rgb), .5));
+    // @include box-shadow(rgba(var(--clr-text-rgb), .5));
     z-index: 1;
 }
 
@@ -191,12 +193,15 @@ body {
     .mobile-nav {
         position: fixed;
         inset: 0;
-        text-align: center;
-        font-size: var(--fs-heading);
+        display: grid;
+        place-items: center;
+        font-size: var(--fs-subbheading);
         background-color: rgba(var(--clr-light-rgb), .97);
         z-index: 1000;
 
         &__list {
+            text-align: center;
+            width: 100%;
             list-style: none;
 
             &-item {
@@ -220,6 +225,7 @@ body {
 
 .header {
     position: relative;
+    // height: 100vh;
     margin-top: 50px;
     overflow: hidden;
     width: 100%;
@@ -227,9 +233,9 @@ body {
 
     &::before {
         @include pseudo-default();
-        top: -120px;
+        top: 0;
         background: url('../assets/images/cover-bg.png') no-repeat bottom;
-        background-size: cover;
+        background-size: contain;
         transform: rotate(180deg);
         z-index: -100;
     }
@@ -316,6 +322,11 @@ body {
             top: 0;
         }
 
+        &::before {
+            top: -120px;
+            background-size: cover;
+        }
+
         &__body {
             padding: 0 var(--size-100);
         }
@@ -360,7 +371,7 @@ body {
         margin-top: var(--size-300);
 
         &::after {
-            @include headline-underline(100%, 8em);
+            @include headline-underline(100%, 300px);
             margin: 0;
         }
     }
@@ -386,6 +397,7 @@ body {
 
         &__heading {
             font-size: var(--fs-small);
+            margin-top: var(--size-300);
         }
 
         &__icon {
@@ -583,6 +595,8 @@ body {
     z-index: -100;
     background-color: var(--clr-text);
     padding: var(--size-300);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+    margin-bottom: -5vw;
 
     &__heading {
         color: var(--clr-neutral);
@@ -590,8 +604,16 @@ body {
         position: relative;
 
         &::after {
-            @include headline-underline(100%, 150px);
+            @include headline-underline(100%, 200px);
         }
+    }
+
+    &__text {
+        color: var(--clr-neutral);
+        margin: var(--size-900) auto;
+        text-align: center;
+        font-size: var(--fs-regular);
+        max-width: 600px;
     }
 
     &__cards-container {
@@ -600,6 +622,7 @@ body {
     }
 
     &__card {
+        --name: 'סוכן';
         display: grid;
         grid-template-areas:
             "img title"
@@ -614,7 +637,7 @@ body {
         box-shadow: rgba(var(--clr-light-rgb), .1) 0px 48px 100px 0px;
 
         &::before {
-            content: 'סוכן';
+            content: var(--name);
             position: absolute;
             display: grid;
             place-items: center;
@@ -622,7 +645,7 @@ body {
             font-size: var(--fs-big);
             font-weight: var(--fs-bold);
             letter-spacing: 1px;
-            width: var(--size-1000);
+            width: var(--size-900);
             height: var(--size-500);
             background-color: var(--clr-light-accent);
             top: calc(var(--size-500) * -1);
@@ -663,8 +686,16 @@ body {
 
 @media (max-width: 30em) {
 
+    .team__text {
+        font-size: var(--fs-xs);
+    }
+
     .team__card {
         &__agent-title {
+            font-size: var(--fs-regular);
+        }
+
+        &::before {
             font-size: var(--fs-regular);
         }
 
@@ -678,6 +709,57 @@ body {
     }
 
 
+}
+
+@media (min-width: 60em) {
+    .team__cards-container {
+        grid-auto-flow: column;
+        max-width: 80em;
+        margin: var(--center);
+    }
+
+    .team__text {
+        font-size: var(--fs-big);
+    }
+
+    .team__card {
+        aspect-ratio: 1/ 1.5;
+        margin: var(--center);
+        grid-template-areas:
+            "img img"
+            "title title"
+            "desc desc";
+        // row-gap: var(--size-800);
+
+        &::before {
+            top: var(--size-200);
+        }
+
+        &__agent-title {
+            align-self: center;
+        }
+
+        &__img-container>img {
+            width: 15rem;
+        }
+    }
+}
+
+/* REVIEWS SECTION */
+/*======================================================================*/
+
+.reviews {
+    width: 100%;
+
+    &__heading {
+        margin: var(--size-600) 0;
+        color: var(--clr-text);
+        position: relative;
+
+        &::after {
+            @include headline-underline(100%, 300px)
+        }
+    }
 }
 
 /* UTILITY CLASSES */

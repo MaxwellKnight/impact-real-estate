@@ -1,19 +1,11 @@
 import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
-import { IntersectionOptions, useInView } from 'react-intersection-observer'
+import { useInView } from 'react-intersection-observer'
 
-import { faPhone } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ReasonProps } from '../utils/interfaces'
 
-interface ReasonInterface {
-    reasonId: number,
-    reasonHeading: string,
-    reasonImg: string,
-    reasonText: string
-}
-
-const Reason: React.FC = () => {
-
+const Reason: React.FC<ReasonProps> = ({ reason }: ReasonProps) => {
+    const { reasonHeading, reasonLogo } = reason
     const { ref, inView } = useInView({ threshold: .2 })
     const animation = useAnimation()
 
@@ -24,7 +16,7 @@ const Reason: React.FC = () => {
         } else {
             animation.start({ scale: 0 })
         }
-    }, [inView])
+    }, [inView, animation])
 
     return (
         <motion.div
@@ -33,8 +25,8 @@ const Reason: React.FC = () => {
             transition={{ type: 'spring', duration: .5, bounce: .2 }}
             className="reasons__item"
         >
-            <h4 className="reasons__item__heading">זמינות 24/7</h4>
-            <FontAwesomeIcon icon={faPhone} className='reasons__item__logo' />
+            <h4 className="reasons__item__heading">{reasonHeading}</h4>
+            {reasonLogo}
             <p className="reasons__item__text">לנו חשוב להיות ישרים וקשובים לצרכים שלך,
                 יש לנו אחריות ומקצועיות לממש את הבקשות שלך.
                 "האד הרוצה לחולל שינוי הוא

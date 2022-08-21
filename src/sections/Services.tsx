@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Service from '../components/Service'
-import ServiceExpanded from '../components/ServicesExpanded'
+import ServiceExpanded from '../components/ServiceExpanded'
 import { servicesData } from '../data/services'
 import { useWidth } from '../context/WindowWidthContext'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
-interface ServiceInterface {
-    serviceId: number,
-    serviceHeading: string,
-    serviceIcon: JSX.Element,
-    serviceText: string,
-    serviceIsActive: boolean,
-    serviceDropDownHeading: string,
-    serviceDropDownText: string,
-    serviceDropDownImg: string,
-}
+import { ServiceInterface } from '../utils/interfaces'
 
 
 const Services: React.FC = () => {

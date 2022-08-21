@@ -1,12 +1,5 @@
 import React from 'react'
 
-interface ReviewInterface {
-    firstName: string,
-    lastName: string,
-    review: string,
-    rating: number
-}
-
 const Review: React.FC = () => {
     return (
         <div className="reviews__card">
@@ -14,6 +7,7 @@ const Review: React.FC = () => {
                 <p></p>
             </div>
             <div className="reviews_card-user">
+                <span>מקסוול נייט</span>
                 <img src="" alt="review subbmitter" />
                 <div className="reviews__card-rating">
                     {/* Rating icons goes here */}

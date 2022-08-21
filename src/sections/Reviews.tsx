@@ -1,21 +1,11 @@
 import React from 'react'
 import Review from '../components/Review'
-
-interface ReviewInterface {
-    firstName: string,
-    lastName: string,
-    review: string,
-    rating: number
-}
-
-interface PropsInterface {
-    reviews: ReviewInterface[]
-}
+// import { ReviewInterface } from '../utils/interfaces'
 
 const Reviews: React.FC = () => {
     return (
-        <section className="reviews container">
-            <h1 className="reviews__heading heading inverted"></h1>
+        <section id='reviews' className="reviews">
+            <h1 className="reviews__heading">לקוחות מספרים</h1>
             <Review />
             <Review />
             <Review />

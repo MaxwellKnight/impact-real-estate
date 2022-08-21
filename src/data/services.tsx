@@ -1,12 +1,12 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoneyBill1Wave } from '@fortawesome/free-solid-svg-icons'
+import { faBuilding, faHouse, faHouseFlag, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const servicesData = [
     {
         serviceId: 0,
         serviceHeading: "מכירה ורכישת נכס",
-        serviceIcon: <FontAwesomeIcon icon={faMoneyBill1Wave} className="services__body__slider__item__icon" />,
+        serviceIcon: <FontAwesomeIcon icon={faHouseFlag} className="services__body__slider__item__icon" />,
         serviceText: `לרכוש דירה זה אחד הרגעים המרגשים ביותר ואנחנו נשמח מאוד ללוות .אתכם באופן מקצועי, יעיל, ממוקד שיעזור לכם לרכוש את דירת החלומות שלכם!!`,
         serviceIsActive: true,
         serviceDropDownHeading: "מכירה ורכישת נכס",
@@ -16,7 +16,7 @@ const servicesData = [
     {
         serviceId: 1,
         serviceHeading: "שיפוץ והשבחת נכסים",
-        serviceIcon: <FontAwesomeIcon icon={faMoneyBill1Wave} className="services__body__slider__item__icon" />,
+        serviceIcon: <FontAwesomeIcon icon={faHouse} className="services__body__slider__item__icon" />,
         serviceText: `לרכוש דירה זה אחד הרגעים המרגשים ביותר ואנחנו נשמח מאוד ללוות .אתכם באופן מקצועי, יעיל, ממוקד שיעזור לכם לרכוש את דירת החלומות שלכם!!`,
         serviceIsActive: false,
         serviceDropDownHeading: "שיפוץ והשבחת נכסים",
@@ -26,7 +26,7 @@ const servicesData = [
     {
         serviceId: 2,
         serviceHeading: "השכרה וניהול נכסים",
-        serviceIcon: <FontAwesomeIcon icon={faMoneyBill1Wave} className="services__body__slider__item__icon" />,
+        serviceIcon: <FontAwesomeIcon icon={faBuilding} className="services__body__slider__item__icon" />,
         serviceText: `לרכוש דירה זה אחד הרגעים המרגשים ביותר ואנחנו נשמח מאוד ללוות .אתכם באופן מקצועי, יעיל, ממוקד שיעזור לכם לרכוש את דירת החלומות שלכם!!`,
         serviceIsActive: false,
         serviceDropDownHeading: "השכרה וניהול נכסים",
@@ -36,7 +36,7 @@ const servicesData = [
     {
         serviceId: 3,
         serviceHeading: "בדיקת שוכרים  ועוד",
-        serviceIcon: <FontAwesomeIcon icon={faMoneyBill1Wave} className="services__body__slider__item__icon" />,
+        serviceIcon: <FontAwesomeIcon icon={faUser} className="services__body__slider__item__icon" />,
         serviceText: `לרכוש דירה זה אחד הרגעים המרגשים ביותר ואנחנו נשמח מאוד ללוות .אתכם באופן מקצועי, יעיל, ממוקד שיעזור לכם לרכוש את דירת החלומות שלכם!!`,
         serviceIsActive: false,
         serviceDropDownHeading: "בדיקת שוכרים",

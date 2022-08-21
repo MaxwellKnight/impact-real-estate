@@ -1,17 +1,6 @@
 import React from 'react'
 import AgentCard from '../components/AgentCard'
 
-interface AgentInterface {
-    firstName: string,
-    lastName: string,
-    desc: string,
-    isSelected: false
-}
-
-interface PropsInterface {
-    agents: AgentInterface[]
-}
-
 const Team: React.FC = () => {
 
     return (
@@ -23,7 +12,7 @@ const Team: React.FC = () => {
                 <AgentCard />
             </div>
 
-            <p className="team__text"></p>
+            <p className="team__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis eius maxime eos laborum quam, neque consectetur, cupiditate hic dolor magnam commodi fugiat odit ducimus in?.</p>
         </section>
     )
 }

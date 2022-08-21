@@ -1,20 +1,7 @@
-import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { ServiceExpandedProps } from '../utils/interfaces'
 
-interface ServiceInterface {
-    service: {
-        serviceId: number,
-        serviceHeading: string,
-        serviceIcon: JSX.Element,
-        serviceText: string,
-        serviceIsActive: boolean,
-        serviceDropDownHeading: string,
-        serviceDropDownText: string,
-        serviceDropDownImg: string,
-    }
-}
-
-const ServiceExpanded = ({ service }: ServiceInterface) => {
+const ServiceExpanded = ({ service }: ServiceExpandedProps) => {
     return (
         <AnimatePresence>
             <motion.div
