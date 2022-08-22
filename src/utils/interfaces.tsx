@@ -29,7 +29,8 @@ export interface ReasonInterface {
     reasonId: number,
     reasonHeading: string,
     reasonLogo: JSX.Element,
-    reasonText: string
+    reasonText: string,
+    borderColor: string
 }
 
 export interface ReasonProps {

@@ -1,22 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 import { ReasonProps } from '../utils/interfaces'
 
 const Reason: React.FC<ReasonProps> = ({ reason }: ReasonProps) => {
-    const { reasonHeading, reasonLogo } = reason
+    const [isScrolled, setIsScrolled] = useState<boolean>(false)
+    const { reasonHeading, reasonLogo, borderColor } = reason
     const { ref, inView } = useInView({ threshold: .2 })
     const animation = useAnimation()
 
     useEffect(() => {
-        if (inView) {
-            animation.start({ scale: 1 })
-
-        } else {
-            animation.start({ scale: 0 })
+        if (!isScrolled) {
+            if (inView) {
+                animation.start({ scale: 1 })
+                setIsScrolled(true)
+            }
+            else {
+                animation.start({ scale: 0 })
+            }
         }
-    }, [inView, animation])
+    }, [inView, animation, isScrolled])
 
     return (
         <motion.div
@@ -24,6 +28,7 @@ const Reason: React.FC<ReasonProps> = ({ reason }: ReasonProps) => {
             animate={animation}
             transition={{ type: 'spring', duration: .5, bounce: .2 }}
             className="reasons__item"
+            style={{ borderTop: `5px solid ${borderColor}` }}
         >
             <h4 className="reasons__item__heading">{reasonHeading}</h4>
             {reasonLogo}

@@ -46,6 +46,10 @@
   --gap-big: 2em;
 
   --center: 0 auto;
+
+  @media(min-width: 50em) {
+    --fs-heading: 4rem;
+  }
 }
 
 *,
@@ -57,6 +61,7 @@
 }
 
 h1 {
+  color: var(--clr-dark);
   font-size: var(--fs-heading);
   text-align: center;
 }

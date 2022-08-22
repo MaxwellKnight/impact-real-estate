@@ -5,7 +5,6 @@ import Review from '../components/Review'
 const Reviews: React.FC = () => {
     return (
         <section id='reviews' className="reviews">
-            <h1 className="reviews__heading">לקוחות מספרים</h1>
             <Review />
             <Review />
             <Review />

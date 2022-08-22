@@ -48,7 +48,7 @@ const Navigation: React.FC = () => {
                     {!isMobile || isListShown ? <NavLink classes={classes} handleNavClick={handleNavClick} /> : ''}
                 </AnimatePresence>
                 <div className="nav__logo">
-                    <span className="nav__logo-icon">Impact</span>
+                    <a href='#top'><img src={require('../assets/logo2.png')} className="nav__logo-icon" aria-label='בית'></img></a>
                 </div>
 
                 {/*print the hamburger icon if the user in mobile*/}
