@@ -11,7 +11,7 @@ const Header: React.FC<{}> = () => {
     const isMobile: boolean | null = useWidth()
 
     return (
-        <header className="header">
+        <header className="header" id='header'>
             <main className="header__body flex">
                 <motion.div
                     layout

@@ -13,7 +13,7 @@ const NavList = ({ classes, handleNavClick }: NavListProps) => {
             transition={{ type: 'spring', duration: .5, bounce: .2 }}
         >
             <ul className={classes.ul}>
-                <li className={classes.li} data-type="active"><a href="#top" onClick={() => handleNavClick()}>בית</a></li>
+                <li className={classes.li} data-type="active"><a href="#header" onClick={() => handleNavClick()}>בית</a></li>
                 <li className={classes.li} ><a href="#services" onClick={() => handleNavClick()}>שירותים</a></li>
                 <li className={classes.li} ><a href="#reasons" onClick={() => handleNavClick()}>למה אנחנו ?</a></li>
                 <li className={classes.li} ><a href="#team" onClick={() => handleNavClick()}>הנבחרת</a></li>

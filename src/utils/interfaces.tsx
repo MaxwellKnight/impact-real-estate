@@ -44,3 +44,10 @@ export interface ReviewInterface {
     rating: number
 }
 
+export interface FormStateInterface {
+    firstName: string,
+    lastName: string,
+    email: string,
+    phoneNumber: string
+}
+

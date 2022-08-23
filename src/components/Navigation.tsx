@@ -38,9 +38,9 @@ const Navigation: React.FC = () => {
 
             <motion.div
                 layout
-                initial={{ y: isMobile ? '-100%' : 0, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ type: 'spring', duration: 2, bounce: .3, delay: 2 }}
+                initial={{ y: isMobile ? '-100%' : 0 }}
+                animate={{ y: 0 }}
+                transition={{ type: 'spring', duration: 3, bounce: .2 }}
                 className="nav__wrapper"
             >
                 <AnimatePresence>

@@ -115,6 +115,10 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, .5);
     overflow: hidden;
 
+    @media (min-width: 50em) {
+        height: 80px;
+    }
+
     &__hamburger {
         position: relative;
         z-index: 10000;
@@ -146,6 +150,7 @@ body {
     #{&}__list {
         list-style-type: none;
         height: 100%;
+        font-size: var(--fs-big);
 
         &-item {
             position: relative;
@@ -205,6 +210,10 @@ body {
         font-size: var(--fs-subbheading);
         background-color: rgba(var(--clr-light-rgb), .97);
         z-index: 1000;
+
+        @media (min-width: 50em) {
+            font-size: var(--fs-heading);
+        }
 
         &__list {
             text-align: center;
@@ -266,8 +275,11 @@ body {
     &__body> :nth-child(1) {
         width: 50%;
         border-radius: 50%;
-        margin: var(--center) -30px auto;
-        overflow: hidden;
+        margin: var(--center);
+
+        &>img {
+            transform: translateY(15%);
+        }
     }
 
     &__body__card {
@@ -397,6 +409,7 @@ body {
     }
 
     &__text {
+        padding-inline: var(--size-300);
         text-align: center;
         margin: var(--size-500) 0;
         font-size: var(--fs-regular);
@@ -530,12 +543,12 @@ body {
         aspect-ratio: 1;
         left: 0;
         top: 0;
-        background-color: var(--clr-text);
+        background-color: var(--clr-neutral);
         z-index: -100;
         border-radius: 100vmax;
         transform: rotate(45deg);
         filter: blur(var(--size-400));
-        opacity: .125;
+        opacity: .05;
     }
 
     &::after {

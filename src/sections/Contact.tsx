@@ -1,11 +1,5 @@
 import React, { useState } from 'react'
-
-interface FormStateInterface {
-    firstName: string,
-    lastName: string,
-    email: string,
-    phoneNumber: string
-}
+import { FormStateInterface } from '../utils/interfaces'
 
 const Contact: React.FC = () => {
 
@@ -27,39 +21,21 @@ const Contact: React.FC = () => {
         })
     }
 
+    const input = (type: string, name: string, value: string, id: string): JSX.Element => {
+        return <input type={type} name={name} value={value} onChange={handleOnChange} id={id} />
+    }
+
+    console.log(formData)
+
     return (
         <section id="contact" className="contact container">
             <h1 className="contact__heading heading inverted">יצירת קשר</h1>
             <div className="contact__card">
                 <form className="contact__card-form">
-                    <input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleOnChange}
-                        id="firstName"
-                    />
-                    <input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleOnChange}
-                        id="lastName"
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleOnChange}
-                        id="email"
-                    />
-                    <input
-                        type="phone"
-                        name="phoneNumber"
-                        value={formData.phoneNumber}
-                        onChange={handleOnChange}
-                        id="email"
-                    />
+                    {input('text', 'firstName', formData.firstName, 'firstName')}
+                    {input('text', 'lastName', formData.lastName, 'lastName')}
+                    {input('email', 'email', formData.email, 'email')}
+                    {input('phone', 'phoneNumber', formData.phoneNumber, 'phoneNumber')}
                     <button className='btn' type='submit'>שליחת טופס</button>
                 </form>
             </div>
