@@ -70,6 +70,7 @@ body {
     &::before {
         content: '';
         position: absolute;
+        z-index: 100;
         top: $top;
         left: $left;
         width: $width;
@@ -167,7 +168,7 @@ body {
     }
 
     &__menu {
-        width: 30px;
+        width: 40px;
         height: 3px;
         background-color: var(--clr-text);
         position: relative;
@@ -455,6 +456,7 @@ body {
     &__body__dropdown {
         position: relative;
         text-align: center;
+        height: 31rem;
         color: var(--clr-neutral);
         background-color: var(--clr-text);
         padding: var(--size-100);
@@ -481,6 +483,13 @@ body {
                 @include button();
                 margin-block: var(--size-300);
                 box-shadow: none;
+            }
+        }
+
+        &__left {
+            &>img {
+                height: 30rem;
+                object-fit: cover;
             }
         }
 
@@ -656,7 +665,6 @@ body {
     position: relative;
     z-index: -100;
     background-color: var(--clr-text);
-    padding: var(--size-300);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
     margin-bottom: -5vw;
 
@@ -785,8 +793,9 @@ body {
 @media (min-width: 60em) {
     .team__cards-container {
         grid-auto-flow: column;
-        max-width: 80em;
-        margin: var(--center);
+        max-width: 100vw;
+        margin-left: auto;
+        overflow-x: auto;
     }
 
     .team__text {
@@ -795,6 +804,7 @@ body {
 
     .team__card {
         aspect-ratio: 1/ 1.5;
+        max-width: 30rem;
         margin: var(--center);
         grid-template-areas:
             "img img"
@@ -927,6 +937,24 @@ body {
             }
         }
 
+    }
+}
+
+.contact {
+    &__card {
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &-form>form {
+            display: grid;
+            grid-auto-flow: row;
+        }
+
+        &>#map {
+            height: 200px;
+        }
     }
 }
 

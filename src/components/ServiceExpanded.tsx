@@ -5,7 +5,6 @@ const ServiceExpanded = ({ service }: ServiceExpandedProps) => {
     return (
         <AnimatePresence>
             <motion.div
-
                 transition={{ type: 'spring', duration: 1 }}
                 className="services__body__dropdown grid"
             >

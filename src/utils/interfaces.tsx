@@ -45,8 +45,7 @@ export interface ReviewInterface {
 }
 
 export interface FormStateInterface {
-    firstName: string,
-    lastName: string,
+    fullName: string,
     email: string,
     phoneNumber: string
 }
